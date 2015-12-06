@@ -42,6 +42,7 @@
 		animation-duration: 3s; 
 		animation-timing-function:linear; */
 		-webkit-transform: rotateX(60deg) rotateZ(30deg);
+    -webkit-transform: rotateX(60deg) rotateZ(30deg);
 		transform:rotateX(60deg) rotateZ(30deg);
 	}
 	.inner{
@@ -155,8 +156,8 @@
     }
     var inner1=document.querySelector(".inner1");
     setTimeout(function(){
-       // transform(inner1,"transform linear 3s","transition");
-       // transform(inner1,"left bottom 100px","TransformOrigin");      
+       transform(inner1,"transform linear 3s","transition");
+       transform(inner1,"left bottom 100px","TransformOrigin");      
     },2000);
     // transform(inner1,"transform 2s","transition");
     document.querySelector("#btn").onclick=function(){
