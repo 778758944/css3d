@@ -57,10 +57,10 @@
 	}
   .inner1{
     -webkit-transform-origin: left bottom 100px;
-    /*-webkit-animation-name:"roll";*/
+    -webkit-animation-name:"roll";
     -webkit-animation-iteration-count: 1;
-    -webkit-animation-duration: 3s; 
-    -webkit-animation-timing-function:linear;
+    -webkit-animation-duration: 1s; 
+    -webkit-animation-timing-function:ease-out;
    /* transition: transform 2s;*/
   }
   .inner2{
@@ -74,7 +74,7 @@
 			transform:rotateY(0deg) translateZ(100px);
 		}
 		100%{
-			transform:rotateY(-90deg) translateZ(100px);
+			transform:rotateY(-150deg) translateZ(100px);
 		}
 	}
   #btn{
@@ -155,8 +155,8 @@
     }
     var inner1=document.querySelector(".inner1");
     setTimeout(function(){
-       transform(inner1,"transform linear 3s","transition");
-       transform(inner1,"left bottom 100px","TransformOrigin");      
+       // transform(inner1,"transform linear 3s","transition");
+       // transform(inner1,"left bottom 100px","TransformOrigin");      
     },2000);
     // transform(inner1,"transform 2s","transition");
     document.querySelector("#btn").onclick=function(){
