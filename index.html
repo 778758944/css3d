@@ -62,6 +62,14 @@
     -webkit-animation-iteration-count: 1;
     -webkit-animation-duration: 1s; 
     -webkit-animation-timing-function:ease-out;
+    -moz-animation-name:"roll";
+    -moz-animation-iteration-count: 10000;
+    -moz-animation-duration: 1s; 
+    -moz-animation-timing-function:ease-out; 
+    animation-name:"roll";
+    animation-iteration-count: 10000;
+    animation-duration: 1s; 
+    animation-timing-function:ease-out;
    /* transition: transform 2s;*/
   }
   .inner2{
@@ -160,7 +168,7 @@
        transform(inner1,"left bottom 100px","TransformOrigin"); 
        alert("kai");     
     },2000);
-    alert(1);
+    alert(2);
     // transform(inner1,"transform 2s","transition");
     document.querySelector("#btn").onclick=function(){
       var value="rotateY(-150deg) translateZ(100px)";
