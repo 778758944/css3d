@@ -42,7 +42,7 @@
 		animation-duration: 3s; 
 		animation-timing-function:linear; */
 		/*-webkit-transform: rotateX(30deg) rotateY(30deg);*/
-		transform:rotateY(30deg);
+		transform:rotateX(60deg) rotateZ(30deg);
 	}
 	.inner{
 		width: 200px;
@@ -55,30 +55,52 @@
 		margin-top: -100px;
 		border: 1px solid #00f;
 	}
+  .inner1{
+    -webkit-transform-origin: left bottom 100px;
+/*    -webkit-animation-name:"roll";
+    -webkit-animation-iteration-count: 10000;
+    -webkit-animation-duration: 3s; 
+    -webkit-animation-timing-function:linear;*/
+   /* transition: transform 2s;*/
+  }
+  .inner2{
+/*    -webkit-animation-name:"roll";
+    -webkit-animation-iteration-count: 10000;
+    -webkit-animation-duration: 3s; 
+    -webkit-animation-timing-function:linear; */
+  }
 	@-webkit-keyframes "roll"{
 		0% {
-			transform:rotateY(0deg);
+			transform:rotateY(0deg) translateZ(100px);
 		}
 		100%{
-			transform:rotateY(360deg);
+			transform:rotateY(-90deg) translateZ(100px);
 		}
 	}
-	@-moz-keyframes "roll"{
+  #btn{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -50px;
+  }
+/*	@-moz-keyframes "roll"{
         0% {
-			transform:rotateY(0deg);
+			transform:rotateX(0deg) translateZ(100px) ;
 		}
 		100%{
-			transform:rotateY(360deg);
+			transform:rotateX(360deg) translateZ(100px);
 		}
 	}
 	@-keyframes "roll"{
 		0% {
-			transform:rotateY(0deg);
+			transform:rotateX(0deg) translateZ(100px);
 		}
 		100%{
-			transform:rotateY(360deg);
+			transform:rotateX(360deg) translateZ(100px);
 		}
-	}
+	}*/
 
 
 
@@ -88,14 +110,15 @@
 <body>
     <div class="stage">
     	<div class="wrap">
-    		<div class="inner" style="border: 1px solid #00f"></div>
+    		<div class="inner inner1" style="border: 1px solid #00f"></div>
     		<div class="inner"></div>
     		<div class="inner"></div>
     		<div class="inner"></div>
-    		<div class="inner"></div>
+    		<div class="inner inner2"></div>
     		<div class="inner"></div>
     	</div>
     </div>
+    <button id="btn">开箱</button>
     <script>
     var width=document.documentElement.clientWidth;
     var height=document.documentElement.clientHeight;
@@ -123,12 +146,22 @@
     		var value="rotateY(180deg) translateZ(100px)";
     	}
     	else if(i==4){
-    		var value="rotateX(90deg) translateZ(100px)";
+    		var value="rotateX(90deg) translateZ(100px) ";
     	}
     	else if(i==5){
     		var value="rotateX(-90deg) translateZ(100px)";
     	}
     	transform(inner[i],value);
+    }
+    var inner1=document.querySelector(".inner1");
+    setTimeout(function(){
+       transform(inner1,"transform 3s linear","transition");
+    },2000);
+    // transform(inner1,"transform 2s","transition");
+    document.querySelector("#btn").onclick=function(){
+      var value="rotateY(-90deg) translateZ(100px)";
+      transform(inner1,value);
+
     }
 
     </script>
