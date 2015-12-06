@@ -57,10 +57,10 @@
 	}
   .inner1{
     -webkit-transform-origin: left bottom 100px;
-/*    -webkit-animation-name:"roll";
-    -webkit-animation-iteration-count: 10000;
+    /*-webkit-animation-name:"roll";*/
+    -webkit-animation-iteration-count: 1;
     -webkit-animation-duration: 3s; 
-    -webkit-animation-timing-function:linear;*/
+    -webkit-animation-timing-function:linear;
    /* transition: transform 2s;*/
   }
   .inner2{
@@ -110,7 +110,7 @@
 <body>
     <div class="stage">
     	<div class="wrap">
-    		<div class="inner inner1" style="border: 1px solid #00f"></div>
+    		<div class="inner inner1"></div>
     		<div class="inner"></div>
     		<div class="inner"></div>
     		<div class="inner"></div>
@@ -155,12 +155,12 @@
     }
     var inner1=document.querySelector(".inner1");
     setTimeout(function(){
-       transform(inner1,"transform 3s linear","transition");
+       // transform(inner1,"transform 3s linear","transition");
     },2000);
     // transform(inner1,"transform 2s","transition");
     document.querySelector("#btn").onclick=function(){
       var value="rotateY(-90deg) translateZ(100px)";
-      transform(inner1,value);
+      transform(inner1,"roll","AnimationName");
 
     }
 
