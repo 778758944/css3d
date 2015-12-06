@@ -157,8 +157,10 @@
     var inner1=document.querySelector(".inner1");
     setTimeout(function(){
        transform(inner1,"transform linear 3s","transition");
-       transform(inner1,"left bottom 100px","TransformOrigin");      
+       transform(inner1,"left bottom 100px","TransformOrigin"); 
+       alert("kai");     
     },2000);
+    alert(1);
     // transform(inner1,"transform 2s","transition");
     document.querySelector("#btn").onclick=function(){
       var value="rotateY(-150deg) translateZ(100px)";
