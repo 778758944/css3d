@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	body,html{
+		width: 100%;
+		height: 100%;
+	}
+	.stage{
+		width: 100%;
+		height: 100%;
+		-webkit-perspective: 800px;
+		perspective:800px;
+	}
+	.wrap{
+		-webkit-transform-style:preserve-3d;
+		transform-style:preserve-3d;
+		width: 500px;
+		height: 500px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		/*transform:translateX(100px);*/
+		/*-webkit-animation-name:"move";*/
+/*		-webkit-animation-iteration-count: 10000;
+		-webkit-animation-duration: 7s; 
+		-webkit-animation-timing-function:linear; */
+	}
+	.backp{
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		margin: 0;
+		background: #f00;
+	}
+	.chair{
+		width: 100px;
+		height: 100px;
+		background: #00f;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -50px;
+		margin-left: -50px;
+		transform: translateZ(200px);
+	}
+	.inner{
+		width: 50px;
+		height: 50px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -25px;
+		margin-top: -25px;
+		transform:translateZ(100px);
+		background:#0f0;
+	}
+	@-webkit-keyframes "move"{
+		0% {
+			transform:translateX(0px);
+		}
+		100% {
+			transform:translateX(700px);
+		}
+	}
+
+</style>
+</head>
+<body>
+    <div class="stage">
+    	<div class="wrap">
+    		<div class="backp"></div>
+    		<div class="inner"></div>
+    		<div class="chair"></div>
+    	</div>
+    </div>
+    <script>
+    var wrap=document.querySelector(".wrap");
+    console.log(wrap);
+    var startp={};
+    wrap.addEventListener("mousedown",function(e){
+    	startp={
+    		x:e.pageX,
+    		y:e.pageY
+    	}
+    	console.log(startp);
+    	wrap.addEventListener("mousemove",drag,false);
+    },false);
+
+    var drag=function(e){
+    	var disX=e.pageX-startp.x;
+    	var disY=e.pageY-startp.y;
+    	startp={
+    		x:e.pageX,
+    		y:e.pageY
+    	}
+    	wrap.style.left=wrap.offsetLeft+disX+"px";
+    	wrap.style.top=wrap.offsetTop+disY+"px";
+    }
+
+    // wrap.addEventListener("mousemove",drag,false);
+    wrap.addEventListener("mouseup",function(){
+    	wrap.removeEventListener("mousemove",drag,false);
+    },false)
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
